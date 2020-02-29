@@ -44,3 +44,7 @@ func (br *Reader) ToFloat64() float64 {
 func (br *Reader) Seek(n int) {
 	br.c += n
 }
+
+func (br *Reader) Backward() []byte {
+	return br.Bytes[br.c:]
+}
