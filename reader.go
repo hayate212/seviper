@@ -46,5 +46,8 @@ func (br *Reader) Seek(n int) {
 }
 
 func (br *Reader) Backward() []byte {
+	if br.c >= len(br.Bytes) {
+		return nil
+	}
 	return br.Bytes[br.c:]
 }
